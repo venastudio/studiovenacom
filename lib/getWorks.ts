@@ -347,7 +347,7 @@ export const getWorks = (): WorkItem[] => {
     const cleanName = year ? rawName.replace(year, "").trim() : rawName;
     const title = titleize(cleanName);
     const ext = path.extname(file).toLowerCase();
-    const type = VIDEO_EXTENSIONS.has(ext) ? "video" : "image";
+    const type: WorkItem["type"] = VIDEO_EXTENSIONS.has(ext) ? "video" : "image";
     const override = overrides[file.toLowerCase()];
     const gallery = resolveGallery(override?.gallery);
     const section = override?.section ?? inferSection(override?.category, type);
