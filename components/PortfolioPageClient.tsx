@@ -8,7 +8,7 @@ import { siteContent, type Locale } from "../content/siteContent";
 import type { WorkItem } from "../content/works";
 
 type PortfolioPageClientProps = {
-  works: WorkItem[];
+  works: ReadonlyArray<WorkItem>;
 };
 
 const STORAGE_KEY = "vena-locale";

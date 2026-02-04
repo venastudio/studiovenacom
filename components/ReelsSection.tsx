@@ -8,7 +8,7 @@ type Reel = {
   src: string;
 };
 
-const ReelsSection: React.FC<{ reels: Reel[] }> = ({ reels }) => {
+const ReelsSection: React.FC<{ reels: ReadonlyArray<Reel> }> = ({ reels }) => {
   const scrollerRef = useRef<HTMLDivElement | null>(null);
   const [autoScroll, setAutoScroll] = useState(true);
 

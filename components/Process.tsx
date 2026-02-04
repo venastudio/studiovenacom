@@ -11,7 +11,7 @@ type Step = {
 type ProcessProps = {
   label: string;
   heading: string;
-  steps: Step[];
+  steps: ReadonlyArray<Step>;
 };
 
 const Process: React.FC<ProcessProps> = ({ label, heading, steps }) => {

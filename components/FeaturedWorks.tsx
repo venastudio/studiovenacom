@@ -14,7 +14,7 @@ type FeaturedWorksProps = {
   placeholderLabel: string;
   placeholderTitle: string;
   locale: Locale;
-  works: WorkItem[];
+  works: ReadonlyArray<WorkItem>;
 };
 
 type FeaturedSlot =

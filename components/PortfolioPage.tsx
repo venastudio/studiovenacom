@@ -11,7 +11,7 @@ type PortfolioPageProps = {
   emptyTitle: string;
   emptyBody: string;
   locale: Locale;
-  works: WorkItem[];
+  works: ReadonlyArray<WorkItem>;
 };
 
 const PortfolioPage: React.FC<PortfolioPageProps> = ({
@@ -22,10 +22,10 @@ const PortfolioPage: React.FC<PortfolioPageProps> = ({
   locale,
   works,
 }) => {
-  const chunk = <T,>(items: T[], size: number) => {
+  const chunk = <T,>(items: ReadonlyArray<T>, size: number) => {
     const rows: T[][] = [];
     for (let i = 0; i < items.length; i += size) {
-      rows.push(items.slice(i, i + size));
+      rows.push(Array.from(items.slice(i, i + size)));
     }
     return rows;
   };
@@ -56,13 +56,13 @@ const PortfolioPage: React.FC<PortfolioPageProps> = ({
     const bySection = sectionLabels.map((section) => {
       const items = works
         .filter((work) => work.section === section.key)
-        .sort((a, b) => {
-          const orderA = a.order ?? 999;
-          const orderB = b.order ?? 999;
-          if (orderA !== orderB) return orderA - orderB;
-          return a.title[locale].localeCompare(b.title[locale], "pl", { numeric: true });
-        });
-      return { ...section, items };
+      const sortedItems = [...items].sort((a, b) => {
+        const orderA = a.order ?? 999;
+        const orderB = b.order ?? 999;
+        if (orderA !== orderB) return orderA - orderB;
+        return a.title[locale].localeCompare(b.title[locale], "pl", { numeric: true });
+      });
+      return { ...section, items: sortedItems };
     });
     return bySection;
   }, [sectionLabels, works, locale]);

@@ -20,8 +20,8 @@ type Reel = {
 };
 
 type HomeClientProps = {
-  works: WorkItem[];
-  reels?: Reel[];
+  works: ReadonlyArray<WorkItem>;
+  reels?: ReadonlyArray<Reel>;
 };
 
 const STORAGE_KEY = "vena-locale";

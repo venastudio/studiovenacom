@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 type AboutProps = {
   label: string;
   heading: string;
-  paragraphs: string[];
+  paragraphs: ReadonlyArray<string>;
 };
 
 const About: React.FC<AboutProps> = ({ label, heading, paragraphs }) => {

@@ -6,13 +6,13 @@ import { motion } from "framer-motion";
 type ServiceItem = {
   title: string;
   description: string;
-  details?: string[];
+  details?: ReadonlyArray<string>;
 };
 
 type ServicesProps = {
   label: string;
   heading: string;
-  items: ServiceItem[];
+  items: ReadonlyArray<ServiceItem>;
 };
 
 const Services: React.FC<ServicesProps> = ({ label, heading, items }) => {
