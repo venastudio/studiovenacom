@@ -32,7 +32,7 @@ const EventsPageClient: React.FC = () => {
         <EventsPage
           heading={content.eventsPage.heading}
           description={content.eventsPage.description}
-          items={content.eventsPage.items}
+          items={[...content.eventsPage.items]}
         />
       </main>
       <Footer {...content.footer} />
