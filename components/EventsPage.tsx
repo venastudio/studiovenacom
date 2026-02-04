@@ -13,7 +13,7 @@ type EventItem = {
 type EventsPageProps = {
   heading: string;
   description: string;
-  items: EventItem[];
+  items: ReadonlyArray<EventItem>;
 };
 
 const EventsPage: React.FC<EventsPageProps> = ({ heading, description, items }) => {
