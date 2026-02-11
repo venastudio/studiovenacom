@@ -224,7 +224,7 @@ const overrides: Record<string, Partial<WorkItem>> = {
     position: "50% 50%",
   },
   "3cab63c48b6d428f915bd9c156bf6b68.mp4": {
-    title: { pl: "Studio Session 01", en: "Studio Session 01" },
+    title: { pl: "Studio Session", en: "Studio Session" },
     category: { pl: "Reel", en: "Reel" },
     section: "social",
     year: "2026",
