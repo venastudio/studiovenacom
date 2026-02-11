@@ -18,10 +18,10 @@ Minimalistyczna strona portfolio (PL/EN) dla Vena Studio, zbudowana w Next.js.
 Set SMTP env variables locally (and on Vercel) to enable the contact form:
 
 ```
-SMTP_HOST=ssl0.ovh.net
+SMTP_HOST=your.smtp.host
 SMTP_PORT=465
-SMTP_USER=contact@studiovena.com
-SMTP_PASS=HASLO_DO_MAILA
+SMTP_USER=your_email@example.com
+SMTP_PASS=your_smtp_password
 ```
 
 Vercel: Project Settings → Environment Variables → add the same keys.
