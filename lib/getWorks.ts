@@ -76,8 +76,8 @@ const overrides: Record<string, Partial<WorkItem>> = {
     },
     href: "https://www.youtube.com/watch?v=gj42lsxfdi0",
     aspect: "landscape",
-    zoom: 2.3,
-    position: "30% 50%",
+    zoom: 2.8,
+    position: "20% 50%",
     featured: true,
   },
   "teledysk2.png": {
@@ -96,8 +96,8 @@ const overrides: Record<string, Partial<WorkItem>> = {
     },
     href: "https://www.youtube.com/watch?v=LXn9Crt8pgg",
     aspect: "landscape",
-    zoom: 2.3,
-    position: "30% 50%",
+    zoom: 2.8,
+    position: "20% 50%",
     featured: true,
   },
   "teledysk3.png": {
@@ -207,8 +207,8 @@ const overrides: Record<string, Partial<WorkItem>> = {
     },
     href: "https://www.instagram.com/p/DK4j93ZsmGU/",
     aspect: "post",
-    zoom: 4.2,
-    position: "8% 50%",
+    zoom: 5.0,
+    position: "4% 50%",
   },
   "zibexcaleosiedle.png": {
     title: { pl: "zibex — Całe Osiedle", en: "zibex — Całe Osiedle" },
