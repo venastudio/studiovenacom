@@ -17,6 +17,11 @@ const cormorant = Cormorant_Garamond({
 export const metadata: Metadata = {
   title: "Vena Studio",
   description: "Minimalistyczne studio produkcyjne i artystyczna agencja kreatywna.",
+  icons: {
+    icon: "/assets/image/VenaLogo.png",
+    shortcut: "/assets/image/VenaLogo.png",
+    apple: "/assets/image/VenaLogo.png",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
