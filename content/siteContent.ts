@@ -28,6 +28,16 @@ export const siteContent = {
         "Pracujemy holistycznie: od koncepcji, przez reżyserię i produkcję, po postprodukcję i dystrybucję. Łączymy estetykę z precyzją wykonania.",
         "Budujemy język wizualny artystów, marek i wydarzeń. Dbamy o detale, rytm i spójność całego doświadczenia.",
       ],
+      subsections: [
+        {
+          title: "GDZIE DOJEŻDŻAMY?",
+          body: "Dojeżdżamy na eventy, klipy, sesje i wydarzenia na terenie całej Polski, nie zamykając się jednocześnie tylko na nią. Jeśli masz projekt lub pomysł na koncepcyjny wyjazd za granicę, jak najbardziej pomożemy, zaczynając już od pierwszej i najbardziej charakterystycznej dla dłuższej podróży kwestii, czyli właśnie logistyki.",
+        },
+        {
+          title: "KONTAKT DO NAS",
+          body: "Jeśli ktokolwiek ma do nas pytania, chciałby porozmawiać o którymś z planowanych projektów, pomysłów na jego promocję, sesję czy ubranie całości w jeden większy spójny koncept, kontaktujcie się z nami, pisząc do nas maila, którego adres znajdziecie w stopce strony. Możecie także kontaktować się przez formularz bądź dzwoniąc pod podany numer telefonu.",
+        },
+      ],
     },
     featured: {
       label: "Realizacje",
@@ -170,6 +180,16 @@ export const siteContent = {
       paragraphs: [
         "We work holistically: concept, direction, production, post and delivery. A balance of aesthetics and precision.",
         "We build visual language for artists, brands, and events. Detail, rhythm, and consistency are the core.",
+      ],
+      subsections: [
+        {
+          title: "WHERE DO WE TRAVEL?",
+          body: "We travel for events, music videos, sessions, and productions across all of Poland, while not limiting ourselves to it. If you have a project or an idea for a concept trip abroad, we can absolutely help, starting from the first and most characteristic part of longer travel: logistics.",
+        },
+        {
+          title: "CONTACT US",
+          body: "If you have any questions, would like to talk about one of your planned projects, ideas for its promotion, a session, or wrapping everything into one bigger cohesive concept, contact us by email (address in the footer), via the form, or by calling the provided phone number.",
+        },
       ],
     },
     featured: {

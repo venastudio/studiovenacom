@@ -7,9 +7,13 @@ type AboutProps = {
   label: string;
   heading: string;
   paragraphs: ReadonlyArray<string>;
+  subsections?: ReadonlyArray<{
+    title: string;
+    body: string;
+  }>;
 };
 
-const About: React.FC<AboutProps> = ({ label, heading, paragraphs }) => {
+const About: React.FC<AboutProps> = ({ label, heading, paragraphs, subsections }) => {
   return (
     <section id="about" className="py-24 md:py-36 px-6 md:px-12 bg-white border-t border-black/10 relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none opacity-5 bg-repeat" style={{backgroundImage: "url('/assets/icons/VenaLogo.png')", backgroundSize: "180px 180px"}} />
@@ -43,6 +47,21 @@ const About: React.FC<AboutProps> = ({ label, heading, paragraphs }) => {
                 <p key={text}>{text}</p>
               ))}
             </div>
+
+            {subsections && subsections.length > 0 ? (
+              <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-black/10 pt-8">
+                {subsections.map((section) => (
+                  <div key={section.title}>
+                    <h3 className="text-[11px] md:text-xs uppercase tracking-[0.3em] text-ink/60">
+                      {section.title}
+                    </h3>
+                    <p className="mt-4 text-sm md:text-base text-ink/70 leading-relaxed">
+                      {section.body}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            ) : null}
           </motion.div>
         </div>
       </div>
