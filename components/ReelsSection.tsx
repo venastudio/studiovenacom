@@ -56,7 +56,7 @@ const ReelsSection: React.FC<{ reels: ReadonlyArray<Reel> }> = ({ reels }) => {
       if (scroller.scrollLeft >= maxScroll - 4) autoDirection.current = -1;
       const delta = autoDirection.current * 60;
       scroller.scrollBy({ left: delta, behavior: "smooth" });
-      autoDirection.current = autoDirection.current * -1;
+      autoDirection.current = autoDirection.current === 1 ? -1 : 1;
     };
 
     const interval = setInterval(nudge, 2500);
