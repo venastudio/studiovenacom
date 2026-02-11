@@ -207,8 +207,8 @@ const overrides: Record<string, Partial<WorkItem>> = {
     },
     href: "https://www.instagram.com/p/DK4j93ZsmGU/",
     aspect: "post",
-    zoom: 5.6,
-    position: "2% 50%",
+    zoom: 6.4,
+    position: "0% 50%",
   },
   "zibexcaleosiedle.png": {
     title: { pl: "zibex — Całe Osiedle", en: "zibex — Całe Osiedle" },

@@ -11,6 +11,8 @@ type Reel = {
 const ReelsSection: React.FC<{ reels: ReadonlyArray<Reel> }> = ({ reels }) => {
   const scrollerRef = useRef<HTMLDivElement | null>(null);
   const [autoScroll, setAutoScroll] = useState(true);
+  const hasCentered = useRef(false);
+  const autoDirection = useRef<1 | -1>(-1);
 
   const next = () => {
     if (!scrollerRef.current) return;
@@ -23,8 +25,41 @@ const ReelsSection: React.FC<{ reels: ReadonlyArray<Reel> }> = ({ reels }) => {
   };
 
   useEffect(() => {
-    if (!autoScroll || reels.length === 0) return;
-    const interval = setInterval(next, 5000);
+    if (!scrollerRef.current || reels.length === 0 || hasCentered.current) return;
+    const scroller = scrollerRef.current;
+    const children = Array.from(scroller.children) as HTMLElement[];
+    if (children.length === 0) return;
+    const middleIndex = Math.floor(children.length / 2);
+    const target = children[middleIndex];
+
+    const center = () => {
+      const maxScroll = scroller.scrollWidth - scroller.clientWidth;
+      const targetLeft =
+        target.offsetLeft - (scroller.clientWidth - target.clientWidth) / 2;
+      const clamped = Math.max(0, Math.min(targetLeft, maxScroll));
+      scroller.scrollTo({ left: clamped });
+      hasCentered.current = true;
+    };
+
+    const raf = requestAnimationFrame(() => requestAnimationFrame(center));
+    return () => cancelAnimationFrame(raf);
+  }, [reels.length]);
+
+  useEffect(() => {
+    if (!autoScroll || reels.length === 0 || !scrollerRef.current) return;
+    const scroller = scrollerRef.current;
+
+    const nudge = () => {
+      const maxScroll = scroller.scrollWidth - scroller.clientWidth;
+      if (maxScroll <= 0) return;
+      if (scroller.scrollLeft <= 4) autoDirection.current = 1;
+      if (scroller.scrollLeft >= maxScroll - 4) autoDirection.current = -1;
+      const delta = autoDirection.current * 60;
+      scroller.scrollBy({ left: delta, behavior: "smooth" });
+      autoDirection.current = autoDirection.current * -1;
+    };
+
+    const interval = setInterval(nudge, 2500);
     return () => clearInterval(interval);
   }, [autoScroll, reels.length]);
 
@@ -73,6 +108,7 @@ const ReelsSection: React.FC<{ reels: ReadonlyArray<Reel> }> = ({ reels }) => {
           style={{ WebkitOverflowScrolling: "touch" }}
           onMouseEnter={() => setAutoScroll(false)}
           onMouseLeave={() => setAutoScroll(true)}
+          onTouchStart={() => setAutoScroll(false)}
         >
           {reels.map((r) => (
             <div key={r.id} className="snap-start flex-none w-full sm:w-[90vw] md:w-[65vw] lg:w-[560px] rounded-2xl overflow-hidden bg-bone border border-black/10">
