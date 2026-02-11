@@ -33,13 +33,6 @@ const Footer: React.FC<FooterProps> = ({
 
       <div className="max-w-6xl mx-auto mt-6 flex items-center justify-between text-[11px] text-white/60">
         <span>Vena Studio</span>
-        <button
-          type="button"
-          onClick={() => setShowPrivacy((prev) => !prev)}
-          className="uppercase tracking-[0.3em] hover:text-white transition-colors"
-        >
-          {privacyLabel}
-        </button>
         <a
           href="https://www.instagram.com/_venastudio/"
           target="_blank"
@@ -51,11 +44,20 @@ const Footer: React.FC<FooterProps> = ({
         </a>
       </div>
 
-      {showPrivacy ? (
-        <div className="max-w-6xl mx-auto mt-4 text-[11px] text-white/60 leading-relaxed">
-          {privacyText}
-        </div>
-      ) : null}
+      <div className="max-w-6xl mx-auto mt-4 flex flex-col items-center">
+        <button
+          type="button"
+          onClick={() => setShowPrivacy((prev) => !prev)}
+          className="text-[9px] uppercase tracking-[0.35em] text-white/50 hover:text-white transition-colors"
+        >
+          {privacyLabel}
+        </button>
+        {showPrivacy ? (
+          <p className="mt-3 max-w-3xl text-center text-[10px] text-white/60 leading-relaxed">
+            {privacyText}
+          </p>
+        ) : null}
+      </div>
     </footer>
   );
 };
