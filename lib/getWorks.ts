@@ -257,7 +257,13 @@ const overrides: Record<string, Partial<WorkItem>> = {
     },
   },
   "video2.mp4": {
+    title: { pl: "Track Day", en: "Track Day" },
+    category: { pl: "Reel", en: "Reel" },
     section: "social",
+    description: {
+      pl: "Zajawka z wydarzenia na torze — ujęcia oraz montaż by VENA.",
+      en: "Track event teaser — shots and edit by VENA.",
+    },
     order: 999,
   },
   "video3.mp4": {
@@ -280,7 +286,13 @@ const overrides: Record<string, Partial<WorkItem>> = {
     },
   },
   "video5.mp4": {
+    title: { pl: "Race Day", en: "Race Day" },
+    category: { pl: "Reel", en: "Reel" },
     section: "social",
+    description: {
+      pl: "Nagrywki i montaż ujęć pod sociale z pokazów jazdy motorsportu.",
+      en: "Footage and edits for social from motorsport driving showcases.",
+    },
   },
   "video6.mp4": {
     hidden: true,
