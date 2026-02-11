@@ -6,9 +6,18 @@ import { ArrowUp, Instagram } from "lucide-react";
 type FooterProps = {
   note: string;
   backToTop: string;
+  privacyLabel: string;
+  privacyText: string;
 };
 
-const Footer: React.FC<FooterProps> = ({ note, backToTop }) => {
+const Footer: React.FC<FooterProps> = ({
+  note,
+  backToTop,
+  privacyLabel,
+  privacyText,
+}) => {
+  const [showPrivacy, setShowPrivacy] = React.useState(false);
+
   return (
     <footer className="bg-ink text-white px-6 md:px-12 py-8">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start gap-6 text-[10px] tracking-[0.3em] uppercase text-white/60">
@@ -24,6 +33,13 @@ const Footer: React.FC<FooterProps> = ({ note, backToTop }) => {
 
       <div className="max-w-6xl mx-auto mt-6 flex items-center justify-between text-[11px] text-white/60">
         <span>Vena Studio</span>
+        <button
+          type="button"
+          onClick={() => setShowPrivacy((prev) => !prev)}
+          className="uppercase tracking-[0.3em] hover:text-white transition-colors"
+        >
+          {privacyLabel}
+        </button>
         <a
           href="https://www.instagram.com/_venastudio/"
           target="_blank"
@@ -34,6 +50,12 @@ const Footer: React.FC<FooterProps> = ({ note, backToTop }) => {
           <span>Instagram</span>
         </a>
       </div>
+
+      {showPrivacy ? (
+        <div className="max-w-6xl mx-auto mt-4 text-[11px] text-white/60 leading-relaxed">
+          {privacyText}
+        </div>
+      ) : null}
     </footer>
   );
 };

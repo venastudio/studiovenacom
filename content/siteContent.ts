@@ -139,6 +139,9 @@ export const siteContent = {
     footer: {
       note: "© 2026 Vena Studio. All rights reserved.",
       backToTop: "Powrót",
+      privacyLabel: "Polityka prywatności",
+      privacyText:
+        "Dane z formularza kontaktowego wykorzystujemy wyłącznie do odpowiedzi na zapytania. Nie udostępniamy ich podmiotom trzecim ani nie używamy w celach marketingowych.",
     },
   },
   en: {
@@ -279,6 +282,9 @@ export const siteContent = {
     footer: {
       note: "© 2026 Vena Studio. All rights reserved.",
       backToTop: "Back to top",
+      privacyLabel: "Privacy policy",
+      privacyText:
+        "We use contact form data only to respond to inquiries. We do not share it with third parties or use it for marketing.",
     },
   },
 } as const;
