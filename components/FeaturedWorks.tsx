@@ -134,6 +134,10 @@ const FeaturedCard: React.FC<{
   const cardHref = work.cta ? undefined : work.href;
   const showOpenLabel = Boolean(work.href) && !ctaLabel;
   const zoom = work.zoom ?? 1;
+  const titleClass =
+    work.titleStyle === "centerBold" ? "text-center font-semibold" : "";
+  const textAlignClass =
+    work.titleStyle === "centerBold" ? "text-center" : "";
   const aspectClass =
     work.aspect === "landscape"
       ? "aspect-[16/9]"
@@ -188,11 +192,11 @@ const FeaturedCard: React.FC<{
               {[work.category?.[locale], work.year].filter(Boolean).join(" · ")}
             </p>
           ) : null}
-          <h3 className="text-lg font-light text-white mt-2">
+          <h3 className={`text-lg font-light text-white mt-2 ${titleClass}`}>
             {work.title[locale]}
           </h3>
           {work.description?.[locale] ? (
-            <p className="mt-2 text-xs text-white/70 leading-relaxed">
+            <p className={`mt-2 text-xs text-white/70 leading-relaxed ${textAlignClass}`}>
               {work.description[locale]}
             </p>
           ) : null}
@@ -214,32 +218,36 @@ const FeaturedCard: React.FC<{
         ) : null}
         {slides.length > 1 ? (
           <>
-            <button
-              type="button"
-              aria-label="Previous slide"
-              onClick={(event) => {
-                event.preventDefault();
-                event.stopPropagation();
-                setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
-              }}
-              className="absolute left-3 top-1/2 -translate-y-1/2 h-8 w-8 rounded-full border border-white/40 bg-black/25 text-white text-xs backdrop-blur hover:bg-black/40 transition-colors"
-            >
-              ◀
-            </button>
-            <button
-              type="button"
-              aria-label="Next slide"
-              onClick={(event) => {
-                event.preventDefault();
-                event.stopPropagation();
-                setCurrent((prev) => (prev + 1) % slides.length);
-              }}
-              className="absolute right-3 top-1/2 -translate-y-1/2 h-8 w-8 rounded-full border border-white/40 bg-black/25 text-white text-xs backdrop-blur hover:bg-black/40 transition-colors"
-            >
-              ▶
-            </button>
-          </>
-        ) : null}
+              <button
+                type="button"
+                aria-label="Previous slide"
+                onClick={(event) => {
+                  event.preventDefault();
+                  event.stopPropagation();
+                  setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
+                }}
+                className="absolute left-3 top-1/2 -translate-y-1/2 h-8 w-8 rounded-full border border-white/40 bg-black/25 text-white text-xs backdrop-blur hover:bg-black/40 transition-colors"
+              >
+              <svg viewBox="0 0 24 24" className="h-3.5 w-3.5 mx-auto" aria-hidden="true">
+                <path fill="currentColor" d="M15.5 19 8.5 12l7-7" />
+              </svg>
+              </button>
+              <button
+                type="button"
+                aria-label="Next slide"
+                onClick={(event) => {
+                  event.preventDefault();
+                  event.stopPropagation();
+                  setCurrent((prev) => (prev + 1) % slides.length);
+                }}
+                className="absolute right-3 top-1/2 -translate-y-1/2 h-8 w-8 rounded-full border border-white/40 bg-black/25 text-white text-xs backdrop-blur hover:bg-black/40 transition-colors"
+              >
+              <svg viewBox="0 0 24 24" className="h-3.5 w-3.5 mx-auto" aria-hidden="true">
+                <path fill="currentColor" d="m8.5 5 7 7-7 7" />
+              </svg>
+              </button>
+            </>
+          ) : null}
         </div>
       </CardLink>
     </motion.article>

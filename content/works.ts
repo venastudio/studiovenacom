@@ -17,6 +17,7 @@ export type WorkItem = {
   section?: "eventy" | "sesje" | "teledyski" | "social";
   order?: number;
   hidden?: boolean;
+  titleStyle?: "centerBold";
 };
 
 export const works: WorkItem[] = [

@@ -45,10 +45,26 @@ const ReelsSection: React.FC<{ reels: ReadonlyArray<Reel> }> = ({ reels }) => {
               In Motion
             </h2>
           </div>
-          <div className="flex gap-3">
-            <button onClick={() => { setAutoScroll(false); prev(); }} aria-label="Previous" className="text-ink/70 hover:text-ink transition-colors text-lg">◀</button>
-            <button onClick={() => { setAutoScroll(false); next(); }} aria-label="Next" className="text-ink/70 hover:text-ink transition-colors text-lg">▶</button>
-          </div>
+        <div className="flex gap-3">
+            <button
+              onClick={() => { setAutoScroll(false); prev(); }}
+              aria-label="Previous"
+              className="text-ink/70 hover:text-ink transition-colors text-lg"
+            >
+              <svg viewBox="0 0 24 24" className="h-4 w-4" aria-hidden="true">
+                <path fill="currentColor" d="M15.5 19 8.5 12l7-7" />
+              </svg>
+            </button>
+            <button
+              onClick={() => { setAutoScroll(false); next(); }}
+              aria-label="Next"
+              className="text-ink/70 hover:text-ink transition-colors text-lg"
+            >
+              <svg viewBox="0 0 24 24" className="h-4 w-4" aria-hidden="true">
+                <path fill="currentColor" d="m8.5 5 7 7-7 7" />
+              </svg>
+            </button>
+        </div>
         </div>
 
         <div

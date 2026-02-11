@@ -207,8 +207,8 @@ const overrides: Record<string, Partial<WorkItem>> = {
     },
     href: "https://www.instagram.com/p/DK4j93ZsmGU/",
     aspect: "post",
-    zoom: 5.0,
-    position: "4% 50%",
+    zoom: 5.6,
+    position: "2% 50%",
   },
   "zibexcaleosiedle.png": {
     title: { pl: "zibex — Całe Osiedle", en: "zibex — Całe Osiedle" },
@@ -248,13 +248,14 @@ const overrides: Record<string, Partial<WorkItem>> = {
     position: "50% 50%",
   },
   "video1.mp4": {
-    title: { pl: "GAŚNIOR — teledysk", en: "GAŚNIOR — music video" },
+    title: { pl: "GAŚNIOR", en: "GAŚNIOR" },
     category: { pl: "Teledysk", en: "Music video" },
     section: "social",
     description: {
       pl: "Wsparcie ekipy VENA przy realizacji teledysku rapera GAŚNIOR.",
       en: "VENA crew support during GAŚNIOR’s music video production.",
     },
+    titleStyle: "centerBold",
   },
   "video2.mp4": {
     title: { pl: "Track Day", en: "Track Day" },
@@ -271,19 +272,20 @@ const overrides: Record<string, Partial<WorkItem>> = {
     category: { pl: "Teledysk", en: "Music video" },
     section: "social",
     description: {
-      pl: "Realizowaliśmy teledysk dla rapera Vic. Numer „High Fee” obejrzycie po kliknięciu w „Otwórz”. Kolejny teledysk wyprodukowany przez naszą ekipę.",
-      en: "We produced Vic’s music video for “High Fee”. Watch it by clicking “Open”. Another video produced by our team.",
+      pl: "Realizowaliśmy ujęcia oraz montowaliśmy klip dla rapera Vic. Numer „High Fee” obejrzycie od razu po kliknięciu w serwisie YouTube.",
+      en: "We handled footage and the edit for Vic’s music video. Watch “High Fee” on YouTube.",
     },
     href: "https://youtu.be/HwVBE73xxbk",
   },
   "video4.mp4": {
-    title: { pl: "Olka Świątek — teledysk", en: "Olka Świątek — music video" },
+    title: { pl: "Olka Świątek", en: "Olka Świątek" },
     category: { pl: "Teledysk", en: "Music video" },
     section: "social",
     description: {
-      pl: "Produkcja od A do Z przy jednym z numerów Olki Świątek.",
-      en: "End-to-end production for one of Olka Świątek’s tracks.",
+      pl: "Sesja zdjęciowa oraz pomoc w realizacji klipu Olki Świątek.",
+      en: "Photo session and production support for Olka Świątek’s music video.",
     },
+    titleStyle: "centerBold",
   },
   "video5.mp4": {
     title: { pl: "Race Day", en: "Race Day" },

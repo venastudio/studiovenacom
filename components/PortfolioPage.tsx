@@ -151,6 +151,10 @@ const WorkCard: React.FC<{
   const openLabel = locale === "pl" ? "Otwórz" : "Open";
   const cardHref = work.href;
   const zoom = work.zoom ?? 1;
+  const titleClass =
+    work.titleStyle === "centerBold" ? "text-center font-semibold" : "";
+  const textAlignClass =
+    work.titleStyle === "centerBold" ? "text-center" : "";
   const aspectClass =
     work.aspect === "landscape"
       ? "aspect-[16/9]"
@@ -211,7 +215,9 @@ const WorkCard: React.FC<{
                 }}
                 className="absolute left-3 top-1/2 -translate-y-1/2 h-7 w-7 rounded-full border border-white/40 bg-black/25 text-white text-[10px] backdrop-blur hover:bg-black/40 transition-colors"
               >
-                ◀
+                <svg viewBox="0 0 24 24" className="h-3 w-3 mx-auto" aria-hidden="true">
+                  <path fill="currentColor" d="M15.5 19 8.5 12l7-7" />
+                </svg>
               </button>
               <button
                 type="button"
@@ -223,22 +229,24 @@ const WorkCard: React.FC<{
                 }}
                 className="absolute right-3 top-1/2 -translate-y-1/2 h-7 w-7 rounded-full border border-white/40 bg-black/25 text-white text-[10px] backdrop-blur hover:bg-black/40 transition-colors"
               >
-                ▶
+                <svg viewBox="0 0 24 24" className="h-3 w-3 mx-auto" aria-hidden="true">
+                  <path fill="currentColor" d="m8.5 5 7 7-7 7" />
+                </svg>
               </button>
             </>
           ) : null}
         </div>
         <div className="mt-4 px-2">
           {work.category || work.year ? (
-            <p className="text-[10px] uppercase tracking-[0.3em] text-ink/50">
+            <p className={`text-[10px] uppercase tracking-[0.3em] text-ink/50 ${textAlignClass}`}>
               {[work.category?.[locale], work.year].filter(Boolean).join(" · ")}
             </p>
           ) : null}
           {!/^[a-f0-9]{16,}$/i.test(work.title[locale]) && (
             <>
-              <h3 className="text-sm font-light text-ink mt-2">{work.title[locale]}</h3>
+              <h3 className={`text-sm font-light text-ink mt-2 ${titleClass}`}>{work.title[locale]}</h3>
               {work.description?.[locale] ? (
-                <p className="mt-1 text-xs text-ink/60 leading-relaxed">
+                <p className={`mt-1 text-xs text-ink/60 leading-relaxed ${textAlignClass}`}>
                   {work.description[locale]}
                 </p>
               ) : null}
